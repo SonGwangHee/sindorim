@@ -11,7 +11,7 @@
         // 동적객체만들기
         //노란색은 함수
         //파란색은 함수가 아니다(괄호 안돼!!!)
-        document.querySelector("#root").innerHTML = "<h1>동적객체</h1>"
+        // document.querySelector("#root").innerHTML = "<h1>동적객체</h1>"
         //navi data 동적 객체 만들기
         //엑셀이라고 생각해라
         const navidata = [{
@@ -26,13 +26,26 @@
             navitext : "google",
             href : "http://www.google.com"
         }]
-        document.querySelector("#root").innerHTML += `
-            <a href=${navidata[0].href}>
-                    ${navidata[0].navitext}
-            </a>`
+
+        let mytag = "";
+        mytag += `<h2>네비게이션</h2>`
+        mytag += `<ul>`;
+            for(x in navidata){
+                mytag += `<li>
+                    <a href='${navidata[x].href}'>${navidata[x].navitext}</a>
+                    </li>`;
+            }
+        mytag += `</ul>`;
+
+        document.querySelector("#root").innerHTML = mytag;
+
+        
+    //note
     //git commit btn의 역할
     //git add . 와 git commit -m "동적객체 만들기2"
     //좌측의 message가 -m option 이다.  
+    //git puch origin main 
+
     </script>
 </body>
 </html>
