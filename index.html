@@ -12,6 +12,24 @@
         //노란색은 함수
         //파란색은 함수가 아니다(괄호 안돼!!!)
         document.querySelector("#root").innerHTML = "<h1>동적객체</h1>"
+        //navi data 동적 객체 만들기
+        //엑셀이라고 생각해라
+        const navidata = [{
+            navitext : "네이버",
+            href : "http://www.naver.com"
+        },
+        {
+            navitext : "다음",
+            href : "http://www.daum.com"
+        },
+        {
+            navitext : "google",
+            href : "http://www.google.com"
+        }]
+        document.querySelector("#root").innerHTML += `
+            <a href=${navidata[0].href}>
+                    ${navidata[0].navitext}
+            </a>`
     </script>
 </body>
 </html>
